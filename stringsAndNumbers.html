@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        </head>
+    <body>
+        <p id="outputText"></p>
+        
+        <script>
+            var text1 = "4";
+            var text2 = "5";
+            var num1 = stringToNumber(text1);
+            var num2 = stringToNumber(text2);
+            
+            document.getElementById("outputText").innerHTML = num1 - num2;
+
+            function stringToNumber(text){
+                return parseInt(text);
+            }
+        </script>
+    </body>
+</html>
