@@ -9,14 +9,29 @@
 
         <form>
             <label for="usernameInput">Username: </label><input type="text" id="usernameInput"/><br/>
-            <label for="passwrordInput">Password</label><input type="text" id="usernameInput"/><br/>
+            <label for="passwordInput">Password</label><input type="password" id="passwordInput"/><br/>
+            <p id="message"></p>
             <br/>
-            <a href="#">Log in</a>
+            <button href ="#" onclick="verifyUser()">Log in</button>
         </form>
         <script>
+
             function verifyUser(){
                 var userName = document.getElementById("usernameInput").value;
-                var password = document.getElementById("passwordInput").value;
+                var password = document.getElementById("passwordInput").value;              
+
+                checkUserCreds(userName, password);
+            }
+
+            function checkUserCreds(userName, password){
+                var systemUsername = "Bond";
+                var systemPassword = "007";
+
+                if(userName == systemUsername && password == systemPassword){
+                    document.getElementById("message").innerHTML = "Successful Login";
+                }else{
+                    document.getElementById("message").innerHTML = "Username or password is incorrect";
+                }
             }
         </script>
     </body>
